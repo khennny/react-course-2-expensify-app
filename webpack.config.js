@@ -9,7 +9,7 @@ module.exports = (env) => {
         //Set entry file and also location for the final bundled file
         entry: './src/app.js',
         output: {
-            path: path.join(__dirname, 'public'),
+            path: path.join(__dirname, 'public','dist'),
             filename: 'bundle.js'
         },
     
@@ -47,7 +47,8 @@ module.exports = (env) => {
         // Configure webpack dev server
         devServer: {
             contentBase: path.join(__dirname, 'public'),
-            historyApiFallback: true
+            historyApiFallback: true,
+            publicPath:'/dist/'
         }
     };
 };
