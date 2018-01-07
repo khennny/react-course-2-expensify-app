@@ -47,7 +47,9 @@
         "serve": "live-server public/ --port=8090",
         "build:dev": "webpack --watch",
         "build:prod": "webpack -p --env production",
-        "dev-server": "webpack-dev-server"
+        "dev-server": "webpack-dev-server",
+        "start": "node server/server.js",
+        "heroku-postbuild": "npm run build:prod"
     },
     "author": "Temitope Magbagbeola",
     "license": "ISC"
