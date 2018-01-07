@@ -45,7 +45,8 @@
     "scripts": {
         "test": "jest --config=jest.config.json --watchAll",
         "serve": "live-server public/ --port=8090",
-        "build": "webpack --watch",
+        "build:dev": "webpack --watch",
+        "build:prod": "webpack -p --env production",
         "dev-server": "webpack-dev-server"
     },
     "author": "Temitope Magbagbeola",
