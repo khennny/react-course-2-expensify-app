@@ -58,7 +58,7 @@ test('should handle sort by amount',() => {
     let value = 'amount';
     wrapper.setProps({
         filter:filters
-    });
+    });    
     wrapper.find('select').at(0).simulate('change',{
         target:{value}
     });
@@ -67,7 +67,7 @@ test('should handle sort by amount',() => {
 
 test('should handle date changes', () => {
     const startDate = moment(0).add(4,'years');
-    const endDate = moment(0).add(6,'years');
+    const endDate = moment(0).add(6,'years');    
     wrapper.find('#dateRangePicker').prop('onDatesChange')({ startDate, endDate });
     expect(setStartDate).toHaveBeenLastCalledWith(startDate);
     expect(setEndDate).toHaveBeenLastCalledWith(endDate);
