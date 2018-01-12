@@ -17,9 +17,10 @@ test('should render EditExpensePage',() => {
 });
 
 test('should handle editExpense',() => {
-    wrapper.find('ExpenseForm').prop('onSubmit')(expenses[0]);
+    const expense = expenses[0];
+    wrapper.find('ExpenseForm').prop('onSubmit')(expense);
     expect(history.push).toHaveBeenLastCalledWith('/');
-    expect(editExpense).toHaveBeenLastCalledWith(expenses[0]);    
+    expect(editExpense).toHaveBeenLastCalledWith(expense.id,expense);    
 });
  
 test('should handle removeExpense',() => {    

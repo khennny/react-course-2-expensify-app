@@ -25,7 +25,7 @@ test('should render error for Invalid form submission', () =>{
     expect(wrapper).toMatchSnapshot();    
 });
 
-test('should et description on Input change', () => {
+test('should get description on Input change', () => {
     const value = 'New description';
     const wrapper = shallow(<ExpenseForm />);
     wrapper.find('input').at(0).simulate('change',{
