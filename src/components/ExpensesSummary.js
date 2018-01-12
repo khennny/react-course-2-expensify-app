@@ -5,9 +5,12 @@ import expensesTotal from '../selectors/expenses-total';
 import numeral from 'numeral';
 
 export const ExpenseSummary = (props) => {
+    const expensesCount = props.expenses.length;
+    const expenseText = (expensesCount === 1) ? 'expense':'expenses';
+    const formattedExpensesTotal = numeral(expensesTotal(props.expenses)/100).format('$0,0.00')
     return (
         props.expenses.length > 0 && 
-        <p>Viewing {props.expenses.length} expenses totalling {numeral(expensesTotal(props.expenses)/100).format('$0,0.00')}</p>
+        <p>Viewing {expensesCount} {expenseText} totalling {formattedExpensesTotal}</p>
     )
 }
 
